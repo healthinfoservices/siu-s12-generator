@@ -4,7 +4,7 @@
 export const DEFAULT_SETTINGS = Object.freeze({
   // FHIR server the generator reads Patient / Practitioner / Organization from.
   // Default = the reference implementation's FHIR_BASE_URL default (config.py).
-  fhirBaseUrl: 'https://gw.interop.community/efiqcon2b/open',
+  fhirBaseUrl: import.meta.env?.VITE_FHIR_BASE_URL || 'https://gw.interop.community/efiqcon2b/open',
 
   // MSH. Blank MSH-4 means "use the selected Organization's facility code".
   sendingApplication: 'PAS', // MSH-3
